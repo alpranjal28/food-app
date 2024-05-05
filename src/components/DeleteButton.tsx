@@ -5,7 +5,7 @@ export default function DeleteButton({
   onDelete,
 }: {
   itemLabel: string;
-  onDelete: () => Promise<void> | (void);
+  onDelete: () => Promise<void> | void;
 }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -14,7 +14,7 @@ export default function DeleteButton({
       <div className="fixed flex justify-center items-center inset-0 bg-black/85">
         <div className="bg-white p-4 rounded-xl text-center border-gray-500 border-4">
           <div className="font-semibold pb-4">
-            Are you sure you want to delete "{itemLabel}" ?
+            Are you sure you want to delete &ldquo;{itemLabel}&rdquo; ?
           </div>
           <div className="flex gap-2 pb-4">
             <button
@@ -29,7 +29,7 @@ export default function DeleteButton({
               type="button"
               onClick={onDelete}
             >
-              Confirm delete "{itemLabel}"
+              Confirm delete &ldquo;{itemLabel}&rdquo;
             </button>
           </div>
         </div>
