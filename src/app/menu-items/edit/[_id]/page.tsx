@@ -24,7 +24,7 @@ export default function EditMenuItemPage() {
         setMenuitem(item);
       });
     });
-  }, []);
+  });
 
   interface MenuItem {
     name: string;

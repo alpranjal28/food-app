@@ -93,7 +93,7 @@ export default function Categories() {
       <UserTabs isAdmin={admin} />
       <form onSubmit={handleCatSubmit}>
         <div>
-          <label htmlFor="">
+          <label htmlFor="catInput">
             {editedCat ? "Update category : " : "New category"}
             {editedCat && (
               <>
@@ -103,6 +103,7 @@ export default function Categories() {
           </label>
           <div className="flex gap-2 items-center justify-center relative ">
             <input
+              id="catInput"
               type="text"
               className=" grow"
               value={catItem}

@@ -31,7 +31,7 @@ export default function AppProvider({
     if (ls && ls.getItem("cartProducts")) {
       setCartProducts(JSON.parse(ls.getItem("cartProducts") as any));
     }
-  }, []);
+  }, [ls]);
 
   function saveCartProductsToLocalStorage(cartProducts: any) {
     if (ls) {
@@ -39,11 +39,10 @@ export default function AppProvider({
     }
   }
 
-
   function removeCartProduct(indexToRemove: any) {
     setCartProducts((prevProducts: any) => {
       const newCartProducts = prevProducts.filter(
-        (v:any,index:number) => index !== indexToRemove
+        (v: any, index: number) => index !== indexToRemove
       );
       saveCartProductsToLocalStorage(newCartProducts);
       return newCartProducts;

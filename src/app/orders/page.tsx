@@ -2,6 +2,7 @@
 import useProfile from "@/components/UseProfile";
 import Loading from "@/components/layout/Loading";
 import UserTabs from "@/components/layout/UserTabs";
+import Image from "next/image";
 
 export default function OrderPage() {
   const { loading, admin } = useProfile();
@@ -28,14 +29,14 @@ export default function OrderPage() {
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/github-mark.png" alt="github" className="w-20 h-20" />
+          <Image src="/github-mark.png" alt="github" width={150} height={100} />
         </a>
         <a
           href="www.linkedin.com/in/pranjal-altherius-lakra"
           target="_blank"
           rel="noreferrer"
         >
-          <img src="/linkedin.png" alt="linkedin" className="w-20 h-20" />
+          <Image src="/linkedin.png" alt="linkedin" width={150} height={100} />
         </a>
       </div>
     </section>
