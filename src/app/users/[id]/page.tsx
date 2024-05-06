@@ -1,8 +1,10 @@
 "use client";
 import useProfile from "@/components/UseProfile";
+import Left from "@/components/icons/Left";
 import Loading from "@/components/layout/Loading";
 import UserForm from "@/components/layout/UserForm";
 import UserTabs from "@/components/layout/UserTabs";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -47,6 +49,11 @@ export default function EditUser() {
     <section className="mt-8 max-w-2xl mx-auto">
       <UserTabs isAdmin={admin} />
       <div className="mt-8">
+        <div className="px-8 pb-4">
+          <Link className="button" href={"/users"}>
+            <Left /> Show all users
+          </Link>
+        </div>
         <UserForm user={user!} onSave={handleSaveButtonCick} />
       </div>
     </section>

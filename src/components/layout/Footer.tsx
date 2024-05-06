@@ -6,26 +6,28 @@ const Footer = () => {
     //property to keep footer at bootom even when page is empty
 
     <footer className="relative text-center border-t p-8 text-gray-500 mt-16">
-      <div className="flex justify-center items-center gap-4 p-4">
-        <div className="w-10 h-10">
-          <Link href={"www.linkedin.com/in/pranjal-altherius-lakra"}>
+      <div className="flex justify-center items-center gap-8 p-4">
+        <div className="flex flex-row justify-center items-center gap-1">
+          <Link href={"https://www.linkedin.com/in/pranjal-altherius-lakra/"}>
             <Image
               alt={"linkedin"}
-              width={50}
-              height={50}
+              width={20}
+              height={20}
               src={"/linkedin.png"}
             ></Image>
           </Link>
+          <h3>LinkedIn</h3>
         </div>
-        <div className="w-10 h-10">
+        <div className="flex flex-row justify-center items-center gap-1">
           <Link href="https://github.com/alpranjal28">
             <Image
               alt={"github"}
-              width={50}
-              height={50}
+              width={20}
+              height={20}
               src={"/github-mark.png"}
             ></Image>
           </Link>
+          <h3>GitHub</h3>
         </div>
       </div>
 

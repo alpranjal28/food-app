@@ -1,10 +1,8 @@
 "use client";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import EditableImage from "./EditableImage";
 import useProfile from "../UseProfile";
 import AddressInputs from "./AddressInputs";
-import Link from "next/link";
-import Left from "../icons/Left";
 
 interface User {
   _id?: string;
@@ -61,11 +59,6 @@ export default function UserForm({
   return (
     <div className="md:flex justify-center gap-6">
       <div className="">
-        <Link className="button" href={"/users"}>
-          <Left /> Show all users
-        </Link>
-      </div>
-      <div className="">
         <div className="p-1 rounded-lg text-center">
           <EditableImage link={image} setLink={setImage} />
         </div>
@@ -120,7 +113,7 @@ export default function UserForm({
           <div className="">
             <label
               htmlFor="adminCheckbox"
-              className="p-2 font-semibold font inline-flex -top-1 gap-2 m-2"
+              className="p-2 font-semibold font inline-flex -top-1 gap-2 m-2 justify-center items-center"
             >
               <input
                 type="checkbox"
@@ -130,7 +123,13 @@ export default function UserForm({
                 onChange={(e) => setAdmin(!admin)}
                 disabled
               />
-              <span>Admin</span>
+              <span className="text-center">
+                Admin
+                <span className="text-xs text-primary">&#40;Disabled&#41;</span>
+              </span>
+              <span className="text-xs">
+                Only admin can view and edit users/categories/menuitems/orders
+              </span>
             </label>
           </div>
         )}
