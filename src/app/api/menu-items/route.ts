@@ -9,14 +9,14 @@ interface menuitems {
   extraSizes: string[];
 }
 
-export async function POST(req: any) {
+export async function POST(req: Request) {
   mongoose.connect(process.env.MONGO_URL as string);
   const data = await req.json();
   const menuItemDoc = await MenuItems.create(data);
   return Response.json(menuItemDoc);
 }
 
-export async function PUT(req: any) {
+export async function PUT(req: Request) {
   mongoose.connect(process.env.MONGO_URL as string);
   const { _id, ...data } = await req.json();
   await MenuItems.findByIdAndUpdate(_id, data);
@@ -29,7 +29,7 @@ export async function GET() {
   return Response.json(menuItems);
 }
 
-export async function DELETE(req: any) {
+export async function DELETE(req: Request) {
   mongoose.connect(process.env.MONGO_URL as string);
   const { _id } = await req.json();
   await MenuItems.findByIdAndDelete(_id);

@@ -5,7 +5,7 @@ import { User } from "@/app/models/User";
 import { UserInfo } from "@/app/models/UserInfo";
 import { authOptions } from "../auth/next-auth/next-auth";
 
-export async function PUT(req: any) {
+export async function PUT(req: Request) {
   mongoose.connect(process.env.MONGO_URL as string);
   const data = await req.json();
   // const session = await getServerSession(authOptions);
@@ -30,7 +30,7 @@ export async function PUT(req: any) {
   return Response.json(true);
 }
 
-export async function GET(req: any) {
+export async function GET(req: Request) {
   mongoose.connect(process.env.MONGO_URL as string);
   const url = new URL(req.url);
   const _id = url.searchParams.get("_id");

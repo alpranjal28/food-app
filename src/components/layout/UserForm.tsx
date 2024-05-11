@@ -121,7 +121,7 @@ export default function UserForm({
                 id="adminCheckbox"
                 checked={admin}
                 onChange={(e) => setAdmin(!admin)}
-                disabled
+                // disabled
               />
               <span className="text-center">
                 Admin
